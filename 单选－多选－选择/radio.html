@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>checkbook</title>
+<meta charset="utf-8" />
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<style type="text/css">
+/*对号按钮样式一*/
+.radio_a1 .radio_1[type=radio] {display: inline-block;vertical-align: middle;width: 20px;height: 27px;-webkit-appearance: none;background-color: transparent; border: 0;outline: 0 !important;line-height: 27px;color: #d8d8d8;}
+.radio_a1 .radio_1[type=radio]:after {content: "";display:block;width: 20px;height: 20px;border-radius: 50%;-moz-border-radius: 50%;-webkit-border-radius: 50%;text-align: center;line-height: 14px;font-size: 16px;color: #fff;border: 2px solid #ddd;background-color: #fff;box-sizing:border-box;}
+.radio_a1 .radio_1[type=radio]:checked:after {content: "L";transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);-webkit-transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);border-color: #099414;background-color: #099414;}
+.radio_a1 label{margin: 0 10px;}
+</style>
+<style type="text/css">
+	/*单选按钮样式二*/
+.radio_wor .radio-btn input[type="radio"], .check-box input[type="checkbox"] {visibility: hidden;}
+.radio_wor .radio-btn {width: 20px;height: 20px;display: inline-block;float: left;margin: 3px 7px 0 0;cursor: pointer;position: relative;-webkit-border-radius: 100%;-moz-border-radius: 100%;border-radius: 100%;
+border: 1px solid #99A0A1;box-shadow: 0 0 1px #ccc;background: rgb(255, 255, 255);background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1)));    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);}
+.radio_wor .checkedRadio {-moz-box-shadow: inset 0 0 5px 1px white;-webkit-box-shadow: inset 0 0 5px 1px white;box-shadow: inset 0 0 5px 1px white;border-color: #0AAAB8;}
+.radio_wor .radio-btn i {width: 10px; height: 10px; position: absolute; left: 5px; top: 5px; -webkit-border-radius: 100%; -moz-border-radius: 100%;border-radius: 100%;}
+.radio_wor .checkedRadio i {background-color: #0AAAB8;}
+</style>
+</head>
+<body>
+<p>问：您是否觉得您是最好的？</p>
+<div class="radio_a1">
+	<input type="radio" class="radio_1" name="n"><label for="check-1">是</label>
+	<input type="radio" class="radio_1" name="n"><label for="check-2" title="">否</label>
+</div>
+
+<ul class="radio_wor">
+	<li><div class="radio-btn"><i><input type="radio" name="radio-btn"></i></div>Male</li>
+	<li><div class="radio-btn checkedRadio"><i><input type="radio" name="radio-btn" checked="checked"></i></div>Female</li>
+</ul>
+
+
+</body>  
+<script type="text/javascript">
+	$(function() {
+		$(".radio-btn").on('click', function () {
+			var _this = $(this),
+			block = _this.parent().parent();
+			block.find('input:radio').attr('checked', false);
+			block.find(".radio-btn").removeClass('checkedRadio');
+			_this.addClass('checkedRadio');
+			_this.find('input:radio').attr('checked', true);
+		});
+	});
+</script>
+</html>

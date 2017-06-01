@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><!-- 优先使用 IE 最新版本和 Chrome -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title></title>
+	<meta name="description" content="不超过150个字符"/><!-- 页面描述 -->
+	<meta name="keywords" content=""/> <!-- 页面关键词 -->
+	<meta name="author" content="name, email@gmail.com"/> <!-- 网页作者 -->
+	<meta name="robots" content="index,follow"/> <!-- 搜索引擎抓取 -->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen" />
+    <style>
+    		#preloader-1, #preloader-2, #preloader-3, #preloader-4, #preloader-5{margin: 20px;float: left;}
+	    	#preloader-1{position: relative;}
+		#preloader-1 span{position: absolute;border:8px solid #fff;border-top:8px solid transparent;border-radius: 999px;}
+		#preloader-1 span:nth-child(1){width:80px;height: 80px;animation: spin-1 2s infinite linear;}
+		#preloader-1 span:nth-child(2){top:20px;left:20px;width:40px;height: 40px;animation: spin-2 1s infinite linear;}
+		@keyframes spin-1{0%{transform: rotate(360deg); opacity: 1.0;}50%{transform: rotate(180deg); opacity: 0.5;}100%{transform: rotate(0deg);opacity: 0;}}
+		@keyframes spin-2{0%{transform: rotate(0deg); opacity: 0.5;}50%{transform: rotate(180deg); opacity: 1;}100%{transform: rotate(360deg);opacity: 0.5;}}
+		
+		#preloader-2{position: relative;}
+		#preloader-2 span{position: absolute;width:30px;height: 30px;background: #fff;border-radius: 999px;}
+		#preloader-2 span:nth-child(1){animation: cross-1 1.5s infinite linear;}
+		#preloader-2 span:nth-child(2){animation: cross-2 1.5s infinite linear;}
+		@keyframes cross-1{0%{transform: translateX(0); opacity: 0.5;}50%{transform: translateX(80px); opacity: 1;}100%{transform: translateX(0);opacity: 0.5;}}
+		@keyframes cross-2{0%{transform: translateX(80px); opacity: 0.5;}50%{transform: translateX(0); opacity: 1;}100%{transform: translateX(80px);opacity: 0.5;}}
+		
+		#preloader-3{position: relative;width:80px;height: 80px;border:4px solid rgba(255,255,255,.25);border-radius: 999px;}
+		#preloader-3 span{position: absolute;width:80px;height:80px;border:4px solid transparent;border-top:4px solid #fff;border-radius: 999px;top:-4px;left:-4px;animation: rotate 1s infinite linear;}
+		@keyframes rotate{0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}
+		
+		#preloader-4{position: relative;}
+		#preloader-4 span{position:absolute;width:16px;height: 16px;border-radius: 999px;background: #fff;animation: bounce 1s infinite linear;}
+		#preloader-4 span:nth-child(1){left:0;animation-delay: 0s;}
+		#preloader-4 span:nth-child(2){left:20px;animation-delay: 0.25s;}
+		#preloader-4 span:nth-child(3){left:40px;animation-delay: 0.5s;}
+		#preloader-4 span:nth-child(4){left:60px;animation-delay: 0.75s;}
+		#preloader-4 span:nth-child(5){left:80px;animation-delay: 1.0s;}
+		@keyframes bounce{0%{transform: translateY(0px);opacity: 0.5;}50%{transform: translateY(-30px);opacity: 1.0;}100%{transform: translateY(0px);opacity: 0.5;}}
+		
+		#preloader-5{position: relative;}
+		#preloader-5 span{position:absolute;width:50px;height: 50px;border:5px solid #fff;border-radius: 999px;opacity: 0;animation: radar 2s infinite linear;}
+		#preloader-5 span:nth-child(1){animation-delay: 0s;}
+		#preloader-5 span:nth-child(2){animation-delay: 0.66s;}
+		#preloader-5 span:nth-child(3){animation-delay: 1.33s;}
+		@keyframes radar{0%{transform: scale(0);opacity: 0;}25%{transform: scale(0);opacity: 0.5;}50%{transform: scale(1);opacity: 1.0;}75%{transform: scale(1.5);opacity: 0.5;}100%{transform: scale(2);opacity: 0;}}
+	    
+	    .weui_loading{position:fixed;top:50%;left:50%;z-index:2000000000;transform:translate(-50%,-50%)}
+	    .weui_loading_leaf{position:absolute;top:-1px;opacity:.25}
+	    .weui_loading_leaf:before{position:absolute;width:7px;height:7px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;background:#fff;-webkit-box-shadow:rgba(0,0,0,.0980392) 0 0 1px;-moz-box-shadow:rgba(0,0,0,.0980392) 0 0 1px;box-shadow:rgba(0,0,0,.0980392) 0 0 1px;content:" ";-webkit-transform-origin:left 16px 0;-moz-transform-origin:left 16px 0;-o-transform-origin:left 16px 0;transform-origin:left 16px 0;-ms-transform-origin:left 16px 0}.weui_loading_leaf_0{-webkit-animation:opacity-60-25-0-12 1.25s linear infinite;animation:opacity-60-25-0-12 1.25s linear infinite}.weui_loading_leaf_0:before{-webkit-transform:rotate(0) translate(7.92px,0);transform:rotate(0) translate(7.92px,0)}.weui_loading_leaf_1{-webkit-animation:opacity-60-25-1-12 1.25s linear infinite;animation:opacity-60-25-1-12 1.25s linear infinite}.weui_loading_leaf_1:before{-webkit-transform:rotate(30deg) translate(7.92px,0);transform:rotate(30deg) translate(7.92px,0)}.weui_loading_leaf_2{-webkit-animation:opacity-60-25-2-12 1.25s linear infinite;animation:opacity-60-25-2-12 1.25s linear infinite}.weui_loading_leaf_2:before{-webkit-transform:rotate(60deg) translate(7.92px,0);transform:rotate(60deg) translate(7.92px,0)}.weui_loading_leaf_3{-webkit-animation:opacity-60-25-3-12 1.25s linear infinite;animation:opacity-60-25-3-12 1.25s linear infinite}.weui_loading_leaf_3:before{-webkit-transform:rotate(90deg) translate(7.92px,0);transform:rotate(90deg) translate(7.92px,0)}.weui_loading_leaf_4{-webkit-animation:opacity-60-25-4-12 1.25s linear infinite;animation:opacity-60-25-4-12 1.25s linear infinite}.weui_loading_leaf_4:before{-webkit-transform:rotate(120deg) translate(7.92px,0);transform:rotate(120deg) translate(7.92px,0)}.weui_loading_leaf_5{-webkit-animation:opacity-60-25-5-12 1.25s linear infinite;animation:opacity-60-25-5-12 1.25s linear infinite}.weui_loading_leaf_5:before{-webkit-transform:rotate(150deg) translate(7.92px,0);transform:rotate(150deg) translate(7.92px,0)}.weui_loading_leaf_6{-webkit-animation:opacity-60-25-6-12 1.25s linear infinite;animation:opacity-60-25-6-12 1.25s linear infinite}.weui_loading_leaf_6:before{-webkit-transform:rotate(180deg) translate(7.92px,0);transform:rotate(180deg) translate(7.92px,0)}.weui_loading_leaf_7{-webkit-animation:opacity-60-25-7-12 1.25s linear infinite;animation:opacity-60-25-7-12 1.25s linear infinite}.weui_loading_leaf_7:before{-webkit-transform:rotate(210deg) translate(7.92px,0);transform:rotate(210deg) translate(7.92px,0)}.weui_loading_leaf_8{-webkit-animation:opacity-60-25-8-12 1.25s linear infinite;animation:opacity-60-25-8-12 1.25s linear infinite}.weui_loading_leaf_8:before{-webkit-transform:rotate(240deg) translate(7.92px,0);transform:rotate(240deg) translate(7.92px,0)}.weui_loading_leaf_9{-webkit-animation:opacity-60-25-9-12 1.25s linear infinite;animation:opacity-60-25-9-12 1.25s linear infinite}.weui_loading_leaf_9:before{-webkit-transform:rotate(270deg) translate(7.92px,0);transform:rotate(270deg) translate(7.92px,0)}.weui_loading_leaf_10{-webkit-animation:opacity-60-25-10-12 1.25s linear infinite;animation:opacity-60-25-10-12 1.25s linear infinite}.weui_loading_leaf_10:before{-webkit-transform:rotate(300deg) translate(7.92px,0);transform:rotate(300deg) translate(7.92px,0)}.weui_loading_leaf_11{-webkit-animation:opacity-60-25-11-12 1.25s linear infinite;animation:opacity-60-25-11-12 1.25s linear infinite}.weui_loading_leaf_11:before{-webkit-transform:rotate(330deg) translate(7.92px,0);transform:rotate(330deg) translate(7.92px,0)}@-webkit-keyframes opacity-60-25-0-12{0%{opacity:.25}0.01%{opacity:.25}0.02%{opacity:1}60.01%{opacity:.25}100%{opacity:.25}}@-webkit-keyframes opacity-60-25-1-12{0%{opacity:.25}8.34333%{opacity:.25}8.35333%{opacity:1}68.3433%{opacity:.25}100%{opacity:.25}}@-webkit-keyframes opacity-60-25-2-12{0%{opacity:.25}16.6767%{opacity:.25}16.6867%{opacity:1}76.6767%{opacity:.25}100%{opacity:.25}}@-webkit-keyframes opacity-60-25-3-12{0%{opacity:.25}25.01%{opacity:.25}25.02%{opacity:1}85.01%{opacity:.25}100%{opacity:.25}}@-webkit-keyframes opacity-60-25-4-12{0%{opacity:.25}33.3433%{opacity:.25}33.3533%{opacity:1}93.3433%{opacity:.25}100%{opacity:.25}}@-webkit-keyframes opacity-60-25-5-12{0%{opacity:.270958333333333}41.6767%{opacity:.25}41.6867%{opacity:1}1.67667%{opacity:.25}100%{opacity:.270958333333333}}@-webkit-keyframes opacity-60-25-6-12{0%{opacity:.375125}50.01%{opacity:.25}50.02%{opacity:1}10.01%{opacity:.25}100%{opacity:.375125}}@-webkit-keyframes opacity-60-25-7-12{0%{opacity:.479291666666667}58.3433%{opacity:.25}58.3533%{opacity:1}18.3433%{opacity:.25}100%{opacity:.479291666666667}}@-webkit-keyframes opacity-60-25-8-12{0%{opacity:.583458333333333}66.6767%{opacity:.25}66.6867%{opacity:1}26.6767%{opacity:.25}100%{opacity:.583458333333333}}@-webkit-keyframes opacity-60-25-9-12{0%{opacity:.687625}75.01%{opacity:.25}75.02%{opacity:1}35.01%{opacity:.25}100%{opacity:.687625}}@-webkit-keyframes opacity-60-25-10-12{0%{opacity:.791791666666667}83.3433%{opacity:.25}83.3533%{opacity:1}43.3433%{opacity:.25}100%{opacity:.791791666666667}}@-webkit-keyframes opacity-60-25-11-12{0%{opacity:.895958333333333}91.6767%{opacity:.25}91.6867%{opacity:1}51.6767%{opacity:.25}100%{opacity:.895958333333333}}
+    </style>
+</head>
+	<body style="background-color: red;">
+	    <div id="preloader-1" style="width: 100px;height: 100px;">
+	        <span></span>
+	        <span></span>
+	    </div>
+
+	    <div id="preloader-2" style="width: 100px;height: 100px;">
+	        <span></span>
+	        <span></span>
+	    </div>
+
+	    <div id="preloader-3">
+	        <span></span>
+	    </div>
+	    
+	    <div id="preloader-4" style="width: 100px;height: 100px;">
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	    </div>
+	    
+	    <div id="preloader-5">
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	    </div>
+	    
+	    <div class="weui_loading">
+		    <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+		    <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+		</div>
+	</body>
+	<script>
+	$(function(){
+		
+	});
+</script>
+</html>

@@ -1,0 +1,48 @@
+<html class="pixel-ratio-1"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SUI Mobile Demo</title>
+    <meta name="description" content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="阿里巴巴国际UED前端">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!--<link rel="shortcut icon" href="/favicon.ico">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Google Web Fonts -->
+	<link rel="stylesheet" href="css/sui.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+  </head>
+  <body>
+<input id="demo7"  type="text">
+<br />
+<form id="demo8" class="sui-form">
+  <input type="text">
+</form>
+
+
+
+<form class="sui-form form-horizontal">
+  <div data-toggle="datepicker" class="control-group input-daterange">
+    <label class="control-label">时间选择：</label>
+    <div class="controls">
+      <input type="text" class="input-medium input-date"><span>-</span>
+      <input type="text" class="input-medium input-date">
+    </div>
+  </div>
+</form>
+<!--data-toggle='datepicker' data-date-timepicker='true'-->
+  <script src="js/sui.js"></script>
+<script type="text/javascript">
+	//这里和正常的datepicker保持一致
+$('#demo8 input').datepicker({
+  timepicker:true,
+  autoclose: false, //这里最好设置为false
+});
+$('#demo7').timepicker();
+$('#timepickerCont a').on('shown',function(){    $('#demo7').timepicker('show')});
+</script>
+
+</body>
+</html>

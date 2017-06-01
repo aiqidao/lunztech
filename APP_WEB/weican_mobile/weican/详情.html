@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微点餐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+<body style="background:#f3f3f3;">
+<div class="header"> 豉椒蒸带子 <a class="logo2" href=""></a></div>
+<div> </div>
+<div class="index-ads"> <img src="../images/cart/banner_@2x.png" style="display:none; height:auto;"> <img src="../images/index/banner_@2x.png" style="display:none; height:auto;"> <img src="../images/cart/banner_@2x.png" style="display:none; height:auto;"> </div>
+<ul class="ad_tag">
+</ul>
+<div class="detail_min_text" style=" border-bottom:0;">
+  <h3 id="products_name">龙升源面粉 <span style="color:#ff0509">￥32.50</span></h3>
+  <div class="detail_r" style="padding-left:0;"> <a class="btn_attention" id="attention" href="javascript:collect(4243);"> </a> </div>
+  <div class="clear"></div>
+</div>
+
+<div class="menu_intro">
+  <div class="head_title">
+    <h2 style="color:#f45957;font-size:1.3em;font-weight:normal;">菜单介绍</h2>
+  </div>
+  <div class="media-body">
+    <p>测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</p>
+  </div>
+</div>
+<div class="menu_intro">
+  <div class="head_title">
+    <h2 style="color:#f45957;font-size:1.3em;font-weight:normal;">用户评价<span style="padding-left:15px;color:#9b9b9b">2条评价</span>
+    <a href="" style="color:#f45957;float:right;margin-right:5px">评论</a>
+    </h2>
+  </div>
+  <div class="media-body bor-bottom">
+    <div class="avtar"><img src="../images/cart/banner_@2x.png"><span class="name">页页</span></div>
+    <p class="media-text">真的超好，好实惠啊</p>
+    <div class="time">2015-01-08</div>
+  </div>
+  <div class="media-body bor-bottom">
+    <div class="avtar"><img src="../images/cart/banner_@2x.png"><span class="name">页页</span></div>
+    <p class="media-text">真的超好，好实惠啊</p>
+    <div class="time">2015-01-08</div>
+  </div>
+  
+  <div style="text-align:center;height:40px;line-height:40px;font-size:1.3em;">加载更多</div>
+</div>
+
+<div class="blank Mar_b_60"></div>
+
+<footer>
+  <div class="foot_buy">
+   <input type="image" src="../images/cart/jiesuan_@2x.png" style="width:100px;float:right; outline:none;margin-right:15px;margin-top:10px"><input type="image" src="../images/cart/jiaru_@2x.png" style="width:100px;float:right;outline:none;margin-right:15px;margin-top:10px;">
+    <div class="clear"></div>
+  </div>
+</footer>
+<script>
+for(i=0;i<$('.index-ads').find('img').size();i++){
+	$('.index-ads').find('img').eq(i).attr('id','ad_img'+(i+1));
+	var new_tag = document.createElement('li');
+	new_tag.id = 'ad_tag'+(i+1);
+	new_tag.title = i+1;	
+	new_tag.onclick = function(){
+		$('.index-ads').find('img').hide();
+		$('.ad_tag').find('li').css('background','#fff');
+		$('#ad_img'+this.title).show();
+		this.style.background = '#e6298b';
+	}
+	$('.ad_tag').append(new_tag);
+}
+if($('.index-ads').find('img').size()>0){
+	$('.index-ads').find('img').eq(0).show();
+	$('.ad_tag').show();
+}
+else{
+	$('.index-ads').hide();
+	$('.ad_tag').hide();
+}
+
+if($('.index-ads').find('img').size()<2){
+	$('.ad_tag').hide();
+}
+$('.ad_tag').find('li').eq(0).css('background','#e6298b');
+
+
+
+var cache_ad_tag = 1;
+
+function lunbo(){
+
+	$('.index-ads').find('img').hide();
+	$('.index-ads').find('img').eq(cache_ad_tag).show();
+	$('.ad_tag').find('li').css('background','#fff');
+	$('.ad_tag').find('li').eq(cache_ad_tag).css('background','#e6298b');
+	cache_ad_tag = cache_ad_tag + 1;
+	if(cache_ad_tag>$('.index-ads').find('img').size()-1){
+		cache_ad_tag =0;
+	}
+}
+setInterval('lunbo()',3000);
+$('#fenxiang_btn').click(function(){
+	$('.info_list').show();
+	$("#BgDiv").css({ display: "block", height: $(document).height() });
+	})
+$(document).click(function (e) {
+    var drag = $('#fenxiang_btn'),
+        dragel = $('#fenxiang_btn')[0],
+        target = e.target;
+    if (dragel !== target && !$.contains(dragel, target)) {
+    $('.info_list').hide();
+	$("#BgDiv").css({ display: "none"}); 
+    }
+});
+	$('#first').click(function(){
+		$('#img_a').attr('src','../images/index/tabPress01_@2x.png');
+		$(this).children().css({'color':'#ef5d68'});
+		$('#img_b').attr('src','../images/index/tab03_@2x.png');
+		$('#img_c').attr('src','../images/index/tab02_@2x.png');
+		$(this).parent().siblings().children().children().css({'color':'#838280'});
+		})
+
+	$('#cart').click(function(){
+		$('#img_b').attr('src','../images/index/tabPress03_@2x.png');
+		$(this).children().css({'color':'#ef5d68'});
+		$('#img_a').attr('src','../images/index/tab01_@2x.png');
+		$('#img_c').attr('src','../images/index/tab02_@2x.png');
+		$(this).parent().siblings().children().children().css({'color':'#838280'});
+		})
+	$('#per').click(function(){
+		$('#img_c').attr('src','../images/index/tabPress02_@2x.png')
+		$(this).children().css({'color':'#ef5d68'})
+		$('#img_a').attr('src','../images/index/tab01_@2x.png');
+
+		$('#img_b').attr('src','../images/index/tab03_@2x.png');
+		$(this).parent().siblings().children().children().css({'color':'#838280'});
+		})
+		
+		
+
+var oTten = document.getElementById("attention");
+	oTten.onclick = function(){
+		if(oTten.className == "btn_attention"){
+			oTten.className = "btn_attention_h"
+			
+			}else{oTten.className ="btn_attention"}
+		}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*CSS源代码*/
+ul{ list-style:none; margin:0; padding:0;}
+.box{ width:707px; height:50px; margin:100px auto; position:relative; z-index:0; border:2px solid #F99;}
+.box ul{ width:707px; position:absolute; z-index:2; left:0; top:0;}
+.box li{ width:100px; border-right:1px dotted #ccc; height:50px; float:left; line-height:50px; cursor:pointer; text-align:center;}
+.box li:last-child{ border:none;}
+.bg{ width:100px; height:50px; background:#3CF; position:absolute; z-index:1; top:0; border-radius:10px;}
+		</style>
+	</head>
+	<body>
+		<!-- HTML代码片段中请勿添加<body>标签 //-->
+		<div class="box">
+			<ul>
+		    		<li>导航1</li>
+		        <li class="on">当前栏目</li>
+		        <li>导航3</li>
+		        <li>导航4</li>
+		        <li>导航5</li>
+		        <li>导航6</li>
+		        <li>导航7</li>
+		    </ul>
+		    <div class="bg"></div>
+		</div>
+<!-- 推荐开源CDN来选取需引用的外部JS //-->
+<script type="text/javascript" src="http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js"></script>
+
+	</body>
+	<script>
+		/*Javascript代码片段*/
+		$(document).ready(function(){
+			var menuLi=$(".box li");
+			var menuUl=$(".box");
+			var bg=$(".bg");
+		
+			function onSelect(){
+				n=menuUl.find("li.on").index();
+				bg.animate({left:menuLi.outerWidth()*n},{queue:false,duration:100});
+				}
+			onSelect();	
+			
+			menuLi.hover(
+			function(){
+				n=$(this).index();
+				bg.animate({left:menuLi.outerWidth()*n},{queue:false,duration:100});
+				},
+			function(){
+				onSelect();
+				}
+			);	
+		});
+	</script>
+</html>

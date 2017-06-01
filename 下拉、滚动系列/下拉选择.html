@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<style type="text/css">
+		*{margin: 0; padding: 0;}
+.lunz1_in2{float:left;width:40%;font-size:15px;border: 1px solid #0AAAB8;text-align: center;-moz-border-radius: 6px;-webkit-border-radius: 6px;
+    border-radius: 6px;}
+.select{cursor: pointer;position: relative;}
+.select p{line-height: 32px;}
+.select::after{content: "";display: block;	width: 8px; height: 8px; border-left: 3px solid #666666; border-bottom: 3px solid #666666; top: 10px; right: 9px; position: absolute;
+ transform: rotate(-46deg); -ms-transform:rotate(-46deg); -moz-transform:rotate(-46deg); -webkit-transform:rotate(-46deg);
+ -o-transform:rotate(-46deg); transition: all .3s ease-in;}
+.select ul {z-index: 999;width: 100%;display: block;background: #FFFFFF;position: absolute;top: 35px;left: 0px;max-height: 0px;overflow: hidden;transition: max-height .3s ease-in;}
+.select ul li.Selected {background: #0AAAB8;color: #FFFFFF;}
+.select ul li:hover{background: #D0D0D0;}
+@-webkit-keyframes slide-down{0%{transform: scale(1,0);}25%{transform: scale(1,1.2);}50%{transform: scale(1,0.85);}75%{transform: scale(1,1.05);}100%{transform: scale(1,1);}}
+.select.open ul{overflow-y:auto; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px;max-height: 250px;	transform-origin: 50% 0;-webkit-animation: slide-down .5s ease-in;transition: max-height .2s ease-in;}
+.select.open::after{transform: rotate(134deg); -ms-transform:rotate(134deg); -moz-transform:rotate(134deg); -webkit-transform:rotate(134deg); -o-transform:rotate(134deg);	transition: all .3s ease-in;top: 15px;}
+.select ul li {width: 100%;height: 30px;line-height: 30px;text-indent: 0.5em;list-style: none;color: #666666;border-radius: 6px;-moz-border-radius: 6px;-webkit-border-radius: 6px;}
+
+		</style>
+	</head>
+	<body>
+		<div class="lunz1_in2 bor_rad6 select">
+			<p data-value="NAJS1982737">NAJS19943183</p>
+			<ul>
+				<li data-value="NAJS19827371" class="">NAJS19827371</li>
+				<li data-value="NAJS19941222" class="">NAJS19941222</li>
+				<li data-value="NAJS19943183" class="Selected">NAJS19943183</li>
+			</ul>
+		</div>
+		<div class="lunz1_in2 bor_rad6 select">
+			<p data-value="NAJS1982737">NAJS1994316</p>
+			<ul>
+				<li data-value="NAJS1982734" class="">NAJS19827374</li>
+				<li data-value="NAJS1994115" class="">NAJS19941105</li>
+				<li data-value="NAJS1994316" class="Selected">NAJS19943186</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			$(".select > p").click(function(e){
+				$(this).parent().toggleClass('open');
+					e.stopPropagation();
+			});	
+			$(".select ul li").click(function(e){
+				var _this=$(this);
+				$(this).parent().parent().find("p").text(_this.attr('data-value'));
+				_this.addClass("Selected").siblings().removeClass("Selected");
+				$(".select").removeClass("open");
+				e.stopPropagation();
+			});
+			$(document).on('click',function(){
+				$(".select").removeClass("open");
+			});
+		});
+</script>
+</html>

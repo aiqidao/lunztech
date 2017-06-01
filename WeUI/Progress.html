@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="css/weui.css"/>
+    <link rel="stylesheet" href="css/example.css"/>
+</head>
+<body ontouchstart>
+    <div class="container" id="container">
+		<div class="hd">
+		    <h1 class="page_title">Progress</h1>
+		</div>
+		<div class="bd spacing">
+		    <div class="weui_progress">
+		        <div class="weui_progress_bar">
+		            <div class="weui_progress_inner_bar js_progress" style="width: 0%;"></div>
+		        </div>
+		        <a href="javascript:;" class="weui_progress_opr">
+		            <i class="weui_icon_cancel"></i>
+		        </a>
+		    </div>
+		    <br>
+		    <div class="weui_progress">
+		        <div class="weui_progress_bar">
+		            <div class="weui_progress_inner_bar js_progress" style="width: 50%;"></div>
+		        </div>
+		        <a href="javascript:;" class="weui_progress_opr">
+		            <i class="weui_icon_cancel"></i>
+		        </a>
+		    </div>
+		    <br>
+		    <div class="weui_progress">
+		        <div class="weui_progress_bar">
+		            <div class="weui_progress_inner_bar js_progress" style="width: 80%;"></div>
+		        </div>
+		        <a href="javascript:;" class="weui_progress_opr">
+		            <i class="weui_icon_cancel"></i>
+		        </a>
+		    </div>
+		    <div class="weui_btn_area">
+		        <a href="javascript:;" class="weui_btn weui_btn_primary" id="btnStartProgress">上传</a>
+		    </div>
+		</div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/router.min.js"></script>
+    <script src="js/example.js"></script>
+    <script>
+    	$(function () {
+    		$('#container').on('click', '#btnStartProgress', function () {
+                if ($(this).hasClass('weui_btn_disabled')) {
+                    return;
+                }
+
+                $(this).addClass('weui_btn_disabled');
+
+                var progress = 0;
+                var $progress = $('.js_progress');
+
+                function next() {
+                    $progress.css({width: progress + '%'});
+                    progress = ++progress % 100;
+                    setTimeout(next, 30);
+                }
+
+                next();
+            });
+    	})
+    </script>
+</body>
+</html>

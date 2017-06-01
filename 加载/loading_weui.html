@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		<![endif]-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title></title>		
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.load-con {
+			width: 40px;
+			height: 40px;
+			margin: 200px auto;
+			position: relative;
+		}
+
+		.load-con .load {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.load-con .load:before {
+			display: block;
+			content: '';
+			width: 15%;
+			height: 15%;
+			border-radius: 100%;
+			background: #333;
+			margin: 0 auto;
+
+			animation: loadFadeDelay 1.2s infinite ease-in-out;
+		}
+
+		@-webkit-keyframes loadFadeDelay {
+			0%, 40%, 100% {opacity: 0;}
+			50% {opacity: 1}
+		}
+
+		@keyframes loadFadeDelay {
+			0%, 39%, 100% {opacity: 0;}
+			40% {opacity: 1}
+		}
+
+
+		.load-con .load2 {
+			transform: rotateZ(30deg);
+		}
+
+		.load-con .load3 {
+			transform: rotateZ(60deg);
+		}
+
+		.load-con .load4 {
+			transform: rotateZ(90deg);
+		}
+
+		.load-con .load5 {
+			transform: rotateZ(120deg);
+		}
+
+		.load-con .load6 {
+			transform: rotateZ(150deg);
+		}
+
+		.load-con .load7 {
+			transform: rotateZ(180deg);
+		}
+
+		.load-con .load8 {
+			transform: rotateZ(210deg);
+		}
+
+		.load-con .load9 {
+			transform: rotateZ(240deg);
+		}
+
+		.load-con .load10 {
+			transform: rotateZ(270deg);
+		}
+
+		.load-con .load11 {
+			transform: rotateZ(300deg);
+		}
+
+		.load-con .load12 {
+			transform: rotateZ(330deg);
+		}
+
+		.load-con .load2:before {
+			animation-delay: -1.1s;
+		}
+
+		.load-con .load3:before {
+			animation-delay: -1s;
+		}
+
+		.load-con .load4:before {
+			animation-delay: -0.9s;
+		}
+
+		.load-con .load5:before {
+			animation-delay: -0.8s;
+		}
+
+		.load-con .load6:before {
+			animation-delay: -0.7s;
+		}
+
+		.load-con .load7:before {
+			animation-delay: -0.6s;
+		}
+
+		.load-con .load8:before {
+			animation-delay: -0.5s;
+		}
+
+		.load-con .load9:before {
+			animation-delay: -0.4s;
+		}
+
+		.load-con .load10:before {
+			animation-delay: -0.3s;
+		}
+
+		.load-con .load11:before {
+			animation-delay: -0.2s;
+		}
+
+		.load-con .load12:before {
+			animation-delay: -0.1s;
+		}
+
+
+		.rect {
+			width: 72px;
+			height: 40px;
+			margin: 200px auto;
+		}
+
+		.rect > div {
+			height: 100%;
+			width: 6px;
+			background: #333;
+			float: left;
+			margin-left: 6px;
+
+			animation: rectDelay 1.2s infinite ease-in-out;
+		}
+
+		@-webkit-keyframes rectDelay {
+			0%, 40%, 100% {transform: scaleY(0.4);}
+			50% {transform: scaleY(1);}
+		}
+
+		@keyframes rectDelay {
+			0%, 40%, 100% {transform: scaleY(0.4);}
+			20% {transform: scaleY(1);}
+		}
+
+		.rect .load2 {
+			animation-delay: -1.1s;
+		}
+
+		.rect .load3 {
+			animation-delay: -1s;
+		}
+
+		.rect .load4 {
+			animation-delay: -0.9s;
+		}
+
+		.rect .load5 {
+			animation-delay: -0.8s;
+		}
+
+		.rect .load6 {
+			animation-delay: -0.7s;
+		}
+
+	</style>
+	</head>
+	<body>
+		<div class="load-con">
+			<div class="load load1"></div>
+			<div class="load load2"></div>
+			<div class="load load3"></div>
+			<div class="load load4"></div>
+			<div class="load load5"></div>
+			<div class="load load6"></div>
+			<div class="load load7"></div>
+			<div class="load load8"></div>
+			<div class="load load9"></div>
+			<div class="load load10"></div>
+			<div class="load load11"></div>
+			<div class="load load12"></div>
+		</div>
+	
+		<div class="rect">
+			<div class="load1"></div>
+			<div class="load2"></div>
+			<div class="load3"></div>
+			<div class="load4"></div>
+			<div class="load5"></div>
+			<div class="load6"></div>
+		</div>
+	</body>
+</html>

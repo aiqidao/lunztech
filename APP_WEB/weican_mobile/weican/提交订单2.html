@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微点餐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+<body style="background:#f3f3f3;">
+<div class="header"> 提交订单 <a class="logo2" href=""></a></div>
+<style>
+.icon_next{background:url(../images/cart/next_@2x.png) no-repeat 0 center;background-size:contain;float:right;width:28px;height:28px;margin-top:10px;}
+.header {
+background-color: #13a4fd;
+}
+.media-text{margin-top:5px;}
+.media-body p {
+font-size: 1.4em;
+}
+</style>
+<div class="menu_intro">
+  <div class="head_title">
+    <h2 style="color:#13a4fd;font-size:1.3em;font-weight:normal;">订单信息</h2>
+  </div>
+  <div class="media-body bor-bottom" style="padding:5px 0 10px 15px;">
+    <p class="media-text">订单号：887348234</p>
+    <p class="media-text">下单时间：2014-12-04  08-09</p>
+  </div>
+</div>
+<div class="menu_intro">
+  <div class="head_title">
+    <h2 style="color:#13a4fd;font-size:1.3em;font-weight:normal;">商品信息</h2>
+  </div>
+  <div class="media-body bor-bottom" style="padding:5px 0 10px 15px;">
+    <ul class="picbox" style="margin:0 0 5px 0">
+      <li>
+        <div class="pic" style="border:solid 1px #f0f0f0;padding:5px;"><img src="../images/cart/photo_@2x.png"></div>
+        <h2 style="font-size:1.4em;color:#000;">J2308-ROB8</h2>
+        <p style="margin-top:5px;font-size:1.4em;color:#f77970">￥834.00<span style="float:right;margin-right:10px;font-size:1.2em;color:#3b3b3b">1件</span></p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="menu_intro">
+  <div class="head_title">
+    <h2 style="color:#13a4fd;font-size:1.3em;font-weight:normal;">支付方式</h2>
+  </div>
+  <div class="media-body bor-bottom" style="padding:5px 0 10px 15px;">
+    <p class="media-text">支付宝支付</p>
+  </div>
+</div>
+<div class="menu_intro">
+  <div class="head_title">
+    <h2 style="color:#13a4fd;font-size:1.3em;font-weight:normal;">收获信息</h2>
+  </div>
+  <div class="media-body bor-bottom" style="padding:5px 0 10px 15px;">
+    <p class="media-text">收件人：婴儿乐</p>
+    <p class="media-text">收获地址: 山东省青岛市北区辽阳东路390号</p>
+    <p class="media-text">联系电话: 0532-48347934</p>
+  </div>
+</div>
+<div>
+<select class="sdfj">
+<option value="English"  selected="selected">English</option>
+		<option value="简体中文" >简体中文</option>
+		<option value="日本語" >日本語</option>
+		<option value="Deutsch" >Deutsch</option>
+		<option value="Espa?ol" >Espa?ol</option>
+		<option value="Fran?ais" >Fran?ais</option>
+		<option value="Italiano" >Italiano</option>
+		<option value="Polski" >Polski</option>
+		<option value="Português" >Português</option>
+		<option value="Svenska" >Svenska</option>
+		<option value="Türk?e" >Türk?e</option>
+		<option value="Руccкий" >Руccкий</option>
+
+
+</select>
+
+<input type="button"   value="提 交" class="sdn">
+</div>
+
+<select id="ts" >
+    <option value="1">1</option>
+    <option value="2">Lorem ipsum dolor s.</option>
+    <option value="3">3</option>
+    <option value="3">4</option>
+    <option value="3">5</option>
+    	<option value="简体中文" >简体中文</option>
+		<option value="日本語" >日本語</option>
+		<option value="Deutsch" >Deutsch</option>
+		<option value="Espa?ol" >Espa?ol</option>
+		<option value="Fran?ais" >Fran?ais</option>
+		<option value="Italiano" >Italiano</option>
+		<option value="Polski" >Polski</option>
+		<option value="Português" >Português</option>
+		<option value="Svenska" >Svenska</option>
+		<option value="Türk?e" >Türk?e</option>
+		<option value="Руccкий" >Руccкий</option>
+</select>
+
+<input type="button" id="click" value="Click"/>
+
+<div class="blank Mar_b_60"></div>
+<footer>
+  <div class="foot_buy" style="border-top: solid 1px #c8c8c8;">
+    <div class="my-cart"> <a href="goods_list.php" class="link ft15" style="color:#404040 !important;">总金额：</a> <span id="cart_amount_desc" style="color:#f77970">￥89.00</span> </div>
+    <input type="image" src="../images/order/btn_ok_03.png" style="width:100px;float:right;outline:none;margin-right:15px;margin-top:8px;">
+    <div class="clear"></div>
+  </div>
+</footer>
+
+<script>
+
+
+$(document).ready(function() {
+	var bool=0;
+    $('.sdn').click(function() {
+		if(bool==0){
+        open($(this).parent().find('select'));
+		bool=1;
+		}else{
+			
+			bool=0;
+			}
+    });
+});
+function open(elem) {
+	var e = e || window.event;
+    if (document.createEvent) {
+		var e = e || window.event;
+        var e = document.createEvent("MouseEvents");
+        e.initMouseEvent("mousedown",true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        elem[0].dispatchEvent(e);
+    } else if (element.fireEvent) {
+        elem[0].fireEvent("onmousedown");
+    }
+}
+/*$(function(){
+
+
+ $("#click").on('click', function(){
+       var s = $("#ts").attr('size')==1?$('#ts option').size():1
+       $("#ts").attr('size', s);
+   });
+   $("#ts option").on({
+    
+       mouseenter: function() {
+           $(this).css({background: '#498BFC', color: '#fff'});
+       },
+       mouseleave: function() {
+           $(this).css({background: '#fff', color: '#000'});
+       }
+   });
+	
+});*/
+</script>
+</body>
+</html>

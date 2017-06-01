@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="qt10_10"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>page11&gt;&gt;车赢违章定位列表</title>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="basic.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="pages.css">
+		<script type="text/javascript" src="base.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<style>
+		  div{box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+		  .sp10n{width: 70%;float: right; margin-right: 5px;}
+		</style>
+		<script>
+			$(function(){
+				var spans = $("li.sp2_1").find(".sp10n");
+				for(var i=0;i<spans.length;i++){
+					var fontSize = parseInt($(spans[i]).css("font-size")); 
+					var temStr = spans[i].innerText;
+					var len = temStr.length*parseInt(fontSize);
+					var parLen = parseInt($(spans[i]).css("width"));
+					if(len > parLen){
+						spans[i].innerHTML = '<marquee direction="left" scrollamount="2">'+temStr+'</marquee>';
+					}else{
+						spans[i].innerHTML = temStr;
+					}
+				}
+			});
+		</script>
+	</head>
+	<body class="qt10_10">
+		<div class="qt10_10 mainer">
+			<div class="qt10_10 wrap">
+			  <div class="qt10_100">
+            	<div class="qt_sp_10 qt_sp_1 qt_sp">
+                    <ul class="qt_sp10">
+                    	<li class="sp2_1">
+                            <p>违章地点<span class="sp10 sp5 sp10n">表示运动方向向运动方向向左227省道283KM+500M处沂水镇镇长安村由南向北</span></p>
+                            <p>违章内容<span class="sp10_green sp10n">驾驶机动车在限速低于60公里/小时</span></p>
+                            <p>违章解释<span class="sp10_red sp5">闯红灯</span></p>
+                            <p>违章时间<span class="sp10 sp5">2015.07.05 17:35 星期一</span></p>
+                            <p>扣分情况<span class="sp10 sp5"><span class="sp2">6</span>分</span></p>
+                            <p>罚款金额<span class="sp10 sp5"><span class="sp2">200</span>元</span></p>
+                            <!--<p class="p2">2015.04.07 青岛<span class="sp5">罚款<span class="sp4"><span class="sp2">200</span>分</span></span></p>-->
+                        </li>
+                    </ul>
+                </div>
+                <div class="sp2_lvse">
+                	<a href="">
+                		<p class="sp2_10">违章状态<span class="sp2_10_red" style="background-color: #ccedeb">已处理<span class="sp10_2_lvse sp10_2"><img src="./336_files/img_a3.png"></span></span></p> 
+					</a>
+                </div>
+              </div>
+            </div>
+		</div>
+</body></html>

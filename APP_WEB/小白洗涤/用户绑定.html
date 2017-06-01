@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>小白洗涤</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telep25hone=no">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="css/animate.css" type="text/css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="css/plugin.css" type="text/css" />
+<link rel="stylesheet" href="css/app.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/jquery.idcode.css" media="all">
+<script type="text/javascript" src="js/swipe.js"></script>
+
+
+
+
+</head>
+<body style="background:#fff;">
+<section id="content">
+  <header class=" bg-light dker bg-gradient ">
+  <nav class="navbar">
+  <div class="head">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="back"><a href="" class=" homeIcon" ></a>
+          </div>
+        </div>
+        <div class="col-xs-6 ">
+          <div class="logo text-center"><a href="">用户绑定</a></div>
+        </div>
+
+      </div>
+    </div>
+    </nav>
+
+  </header>
+	 <section class="scrollable">
+<div class="row">            
+            <div class="col-sm-12">
+              <div class=" bg-f0f0f0">
+                <div  class="list-group-item bg-f0f0f0 H56" style="border-bottom:none;">
+                <div class="col-xs-3 col-font LH35">手机号</div>
+                <div class="col-xs-8"><input type="text" class="form-control" style="width:100%"></div>
+               
+                </div>
+                <div class="list-group-item bg-f0f0f0  H56" style="border-bottom:none;">
+                <div class="col-xs-3 col-font LH35">验证码</div>
+                <div class="col-xs-5"><input type="text" class="form-control"></div>
+                <div class="col-xs-4"><div  id ="idcode" ></div></div>
+                
+                </div>
+                <div class="list-group-item bg-f0f0f0 H56" style="border-bottom:none;">
+                <div class="col-xs-4 col-font LH35">短信验证码</div>
+                <div class="col-xs-5"><input type="text" class="form-control" style="width:100%"></div>
+				<div class="col-xs-3 col-font LH35">立即获取</div>
+                </div>
+
+              </div>
+            </div>
+            
+          </div>
+         
+
+	</section>
+
+</section>
+<script src="js/jquery.min.js"></script> 
+<!-- Bootstrap --> 
+<script src="js/bootstrap.js"></script> 
+<!-- Sparkline Chart --> 
+
+<!-- App --> 
+<script src="js/app.js"></script> 
+<script src="js/app.plugin.js"></script> 
+<script src="js/app.data.js"></script> 
+<script src="js/jquery.idcode.js"></script>
+<script>
+	$(function(){
+		$(".check-info").click(function(){
+			if($(this).attr('class').indexOf('bg-green')<0){
+				$(this).addClass("bg-green");
+				$(this).find('span').css('display','block')
+				$(this).siblings().removeClass('bg-green');
+				$(this).siblings().find('span').css('display','none')
+				}
+			
+			
+			})
+		 $.idcode.setCode();
+		 var settings = {
+			e	 		: 'idcode',
+			codeType 	: { name : 'follow', len: 4},
+			codeTip		: 'refresh?',
+			inputID:    'Txtidcode'//这个就是你页面输入验证码的文本框ID
+		};
+
+		
+		})
+    </script>
+</body>
+</html>

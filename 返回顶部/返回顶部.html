@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+ <head> 
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<meta name="keywords" content="">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<meta name="description" content="">
+	<title>jQuery无图片网站回到顶部特效 - 站长素材</title>
+	<style type="text/css">
+	.scroll_s{display: none; width: 60px;height: 60px;line-height: 60px;text-align: center;position: fixed;right: 50px;bottom: 16px;cursor: pointer;z-index: 99999999999;}
+	</style>
+ </head>
+ <body>
+<br><br><br><br><br><br><br><br>
+<div style="height:1000px;"></div>
+
+	<!--开始-->
+	<div class="scroll_s"><svg><image xlink:href="images/head_er.svg" src="images/head_er.png" width="60" height="60" /></svg></div>
+	<!--结束-->
+	
+	<script type="text/javascript">
+		$(function(){
+			showScroll();
+			function showScroll(){
+				$(window).scroll( function() { 
+					var scrollValue=$(window).scrollTop();
+					scrollValue > 100 ? $('div[class=scroll_s]').fadeIn():$('div[class=scroll_s]').fadeOut();
+				} );	
+				$('.scroll_s').click(function(){
+					$("html,body").animate({scrollTop:0},200);	
+				});	
+			}
+		})
+	</script>
+ </body>
+</html>

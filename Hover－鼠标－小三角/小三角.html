@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>CSS小三角</title>		
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <style>
+	    	/*边框法实现底部90度尖角对话框*/
+	    	.org_box{height:80px;line-height:80px;margin-bottom:30px;padding-left:2em;background:#F3961C;position:relative;}
+			.org_bot_cor{width:0;height:0;font-size:0;border-width:15px;border-style:solid;border-color:#f3961c transparent transparent;_border-color:#f3961c white white;overflow:hidden;position:absolute;left:60px; bottom:-30px;}
+	    	
+	    	/*字符法实现底部90度尖角对话框*/
+	    	.org_bot_cor_2{height:30px;line-height:0;font-size:60px;color:#f3961c;position:absolute;left:60px;bottom:-25px;}
+	    
+	    	/*CSS “边框法”实现气泡对话框效果一*/
+	    	.test_1{width:300px; padding:30px 20px; margin-left:60px; background:#beceeb; position:relative;}
+			.test_1 span{width:0; height:0; font-size:0; overflow:hidden; position:absolute;}
+			.test_1 span.bot{border-width:20px;border-style:solid;border-color:#ffffff #beceeb #beceeb #ffffff;left:-40px;top:40px;}
+			.test_1 span.top{border-width:10px 20px;border-style:dashed solid solid dashed;border-color:transparent #ffffff #ffffff transparent;left:-40px;top:60px;}
+			
+			/*CSS “边框法”实现气泡对话框效果二*/
+			.test_2{width:300px; margin: 30px auto; padding:30px 20px; border:5px solid #beceeb; position:relative;}
+			.test_2 span{width:0; height:0; font-size:0; overflow:hidden; position:absolute;}
+			.test_2 span.bot{border-width:20px;border-style:solid dashed dashed;border-color:#beceeb transparent transparent;left:80px;bottom:-40px;}
+			.test_2 span.top{border-width:20px;border-style:solid dashed dashed;border-color:#ffffff transparent transparent;left:80px;bottom:-33px;}
+			/*CSS3 border-radius实现气泡对话框效果*/ 
+			.test_3{width:300px;padding:80px 20px;margin-left:100px;background:#beceeb;-webkit-border-top-left-radius:220px 120px;-webkit-border-top-right-radius:220px 120px;-webkit-border-bottom-right-radius:220px 120px;-webkit-border-bottom-left-radius:220px 120px;-moz-border-radius:220px / 120px;border-radius:220px / 120px;position:relative;}
+			.test_3 span{width:0; height:0; font-size:0; background:#beceeb; overflow:hidden; position:absolute;}
+			.test_3 span.bot{width:30px;height:30px;-moz-border-radius:30px;-webkit-border-radius:30px;border-radius:30px;left:10px;bottom:-20px;}
+			.test_3 span.top{width:15px;height:15px;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;left:0px;bottom:-40px;}
+	    </style>
+	</head>
+	<body>
+		
+		<!--边框法实现底部90度尖角对话框-->		
+		<div class="org_box">
+		    <span class="org_bot_cor"></span>
+		    边框法实现底部90度尖角对话框
+		</div>
+		
+		<!--字符法实现底部90度尖角对话框-->
+		<div class="org_box">
+		    <span class="org_bot_cor_2"></span>
+		    字符法实现底部90度尖角对话框
+		</div>
+		
+		<!--CSS “边框法”实现气泡对话框效果一-->
+		<div class="test_1">
+		    <span class="bot"></span>
+		    <span class="top"></span>
+		    CSS “边框法”实现气泡对话框效果一
+		</div>
+		
+		<!--CSS “边框法”实现气泡对话框效果二-->
+		<div class="test_2">
+		    <span class="bot"></span>
+		    <span class="top"></span>
+		    CSS “边框法”实现气泡对话框效果二
+		</div>
+		
+		<!--CSS3 border-radius实现气泡对话框效果--> 
+		<div class="test_3">
+		    <span class="bot"></span>
+		    <span class="top"></span>
+		    CSS3 border-radius实现气泡对话框效果 
+		</div>
+	</body>
+</html>

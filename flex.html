@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		<![endif]-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title></title>		
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <style>
+	    	html{height:100%;}
+        body{background: #fff;margin:0;padding:0;width: 100%;height: 100%;}
+        /**父元素＊伸缩容器**/
+        .flex-wrap{
+            /** 各种版本兼容**/           
+            display: -webkit-box;		/* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;		 	/* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;	  	/* TWEENER - IE 10 */
+            display: -webkit-flex;	 	/* NEW - Chrome */
+            display: flex;			 	/* NEW, Spec - Opera 12.1, Firefox 20+ */
+            }
+            
+        /**父元素＊水平伸缩容器＊横向排列换行**/
+        .flex_hw{
+        	display: box;display: -webkit-box;display: -moz-box;	display: -ms-flexbox;display: -webkit-flex;display: flex;
+        	-moz-box-orient: horizontal;-webkit-box-orient: horizontal;-moz-box-direction: normal;-webkit-box-direction: normal;-moz-box-lines: multiple;-webkit-box-lines: multiple;flex-flow:row wrap;-ms-flex-flow: row wrap;-webkit-flex-flow: row wrap;-moz-flex-wrap: row wrap;-o-flex-wrap: row wrap;}
+        /** 父元素＊垂直伸缩容器＊纵向排列换行**/
+        .flex_vw{display: flex;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+        -moz-box-orient: vertical;-webkit-box-orient: vertical;-moz-box-direction: normal;-moz-box-lines: multiple;-webkit-box-lines: multiple;flex-flow: column wrap;-ms-flex-flow: column wrap;-webkit-flex-flow: column wrap;-moz-flex-wrap: column wrap;-o-flex-wrap:  column wrap;}
+
+
+        /** 垂直居中**/
+        .midCenter{
+            /** 垂直居中核心**/
+            -moz-box-pack: center;-webkit-box-pack: center;box-pack:center;-moz-box-align: center;-webkit-box-align: center;box-align: center;box-pack:center;-ms-flex-pack:center;display: -ms-flexbox;-ms-flex-align:center;justify-content:center;align-items: center;}
+
+        /** 子元素-平均分栏 **/
+        .flex_1{
+        	-webkit-box-flex: 1;	-moz-box-flex: 1; -ms-flex: 1;-webkit-flex: 1;flex: 1;overflow: hidden;
+        /* width: 20%;			  		For old syntax, otherwise collapses. */       
+        }
+
+        /** 真正滚动**/
+        .scroll-wrap{position: relative;width: 100%;height: 100%;overflow: scroll;-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;}
+
+        /** 头和尾巴**/
+        header,footer{background:#f7f7f7;height:44px;}
+        footer>div{-webkit-box-flex: 1;-moz-box-flex: 1;-ms-flex: 1;-webkit-flex: 1;flex: 1;border:1px solid #666;margin:4px;}
+
+        section{margin:3px 5px;}
+
+        /** 真正设置高度 **/
+        #banner{border:2px solid #999;margin:1px;height:100px;}
+        #quirk,#four-col{height:150px;}
+        #three-col,#two-col{height:100px;}
+        
+        /** 内部组件**/
+        #four-col>div,#three-col>div,#two-col>div{-webkit-box-flex: 1;-moz-box-flex: 1;-ms-flex: 1;-webkit-flex: 1;flex: 1;}
+        #four-col>div{background: #aaebbe;margin:0 2px;}
+        #three-col>div{background: #8f82bc;margin:0 2px;}
+        #two-col>div{background: #f7baba;margin:0 2px;}
+        #quirk>div{margin:0 2px;}
+        #quirk>div:nth-child(1){background: #b9e2ee;-webkit-box-flex: 200;-moz-box-flex: 200;-ms-flex: 200;-webkit-flex: 200;flex: 200;}
+        #quirk>div:nth-child(2){-webkit-box-flex: 175;-moz-box-flex: 175;-ms-flex: 175;-webkit-flex: 175;flex: 175;}
+        #quirk>div:nth-child(2)>div:nth-child(1){background: #b9e2ee;-webkit-box-flex: 60;-moz-box-flex: 60;-ms-flex: 60;-webkit-flex: 60;flex: 60;margin-bottom: 4px;}
+        #quirk>div:nth-child(2)>div:nth-child(2){background: #b9e2ee;-webkit-box-flex: 30;-moz-box-flex: 30;-ms-flex: 30;-webkit-flex: 30;flex: 30;}
+	    </style>
+	</head>
+	<body class="flex_vw">
+	    <header class="midCenter flex_hw">我是标题</header>
+	
+	    <div class="flex_1 flex-wrap flex_vw">
+	        <div class="scroll-wrap">
+	            <section class="midCenter flex-wrap" id="banner">
+	                <div>我是banner</div>
+	            </section>
+	
+	            <section id="quirk" class="flex-wrap flex_hw">
+	                <div></div>
+	                <div class="flex-wrap flex_vw">
+	                    <div></div>
+	                    <div></div>
+	                </div>
+	            </section>
+	
+	            <section id="four-col" class="flex-wrap flex_hw">
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	            </section>
+	
+	            <section id="two-col" class="flex-wrap flex_hw">
+	                <div></div>
+	                <div></div>
+	            </section>
+	
+	            <section id="three-col" class="flex-wrap flex_hw">
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	            </section>
+	        </div>
+	    </div>
+	    
+	    <footer class="flex-wrap flex_hw">
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	    </footer>
+	</body>
+	<script>
+	$(function(){
+		
+	});
+</script>
+</html>

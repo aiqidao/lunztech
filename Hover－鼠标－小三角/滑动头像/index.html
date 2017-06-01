@@ -1,0 +1,582 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery+css3滑动头像</title>
+<style>
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	margin:0;
+	padding:0;
+	background-color: #E6E6E6;
+}
+.grid {
+	margin: 100px auto 80px auto;
+	padding: 0px;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	max-width: 1000px;
+	-webkit-box-shadow:0px 40px 50px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow:0px 40px 50px rgba(0, 0, 0, 0.3);
+	box-shadow:0px 40px 50px rgba(0, 0, 0, 0.3);
+}
+.grid li {
+	width: 10%;
+	background: #000000;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.grid img {
+	float: left;
+	width: 100%;
+	height: auto;
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform-style: preserve-3d;
+	-moz-backface-visibility: hidden;
+	-moz-transform: translate3d(0, 0, 0);
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+}
+.grid .info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+	background: #DC584C;
+	display: none;
+	z-index: 2;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform-style: preserve-3d;
+	-moz-backface-visibility: hidden;
+	-moz-transform: translate3d(0, 0, 0);
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+}
+.grid p {
+	font-size: 22px;
+	font-weight: bolder;
+	color: #FFF;
+}
+
+.title {background-color:#DC584C; width:100%; position:fixed; top:0; left:0; font-size:12px; font-family:Verdana, Geneva, sans-serif; z-index:99999;}
+.title a {color:#FFF; text-decoration:none; line-height:24px; padding:0 10px; letter-spacing: 1px;}
+.title_r {float:right;}
+.title_l {float:left;}
+.title a:hover {background:#a32a1f;}
+
+.footer {text-align:center;}
+.footer a {text-decoration:none; font-size:14px; color:#999;}
+</style>
+</head>
+
+<body>
+<ul class="grid">
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/1.jpg" alt="" />
+			<div class="info">
+				<p>1</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/2.jpg" alt="" />
+			<div class="info">
+				<p>2</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/3.jpg" alt="" />
+			<div class="info">
+				<p>3</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/4.jpg" alt="" />
+			<div class="info">
+				<p>4</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/5.jpg" alt="" />
+			<div class="info">
+				<p>5</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/6.jpg" alt="" />
+			<div class="info">
+				<p>6</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/7.jpg" alt="" />
+			<div class="info">
+				<p>7</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/8.jpg" alt="" />
+			<div class="info">
+				<p>8</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/9.jpg" alt="" />
+			<div class="info">
+				<p>9</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/10.jpg" alt="" />
+			<div class="info">
+				<p>10</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/11.jpg" alt="" />
+			<div class="info">
+				<p>11</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/12.jpg" alt="" />
+			<div class="info">
+				<p>12</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/13.jpg" alt="" />
+			<div class="info">
+				<p>13</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/14.jpg" alt="" />
+			<div class="info">
+				<p>14</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/15.jpg" alt="" />
+			<div class="info">
+				<p>15</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/16.jpg" alt="" />
+			<div class="info">
+				<p>16</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/17.jpg" alt="" />
+			<div class="info">
+				<p>17</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/18.jpg" alt="" />
+			<div class="info">
+				<p>18</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/19.jpg" alt="" />
+			<div class="info">
+				<p>19</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/20.jpg" alt="" />
+			<div class="info">
+				<p>20</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/21.jpg" alt="" />
+			<div class="info">
+				<p>21</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/22.jpg" alt="" />
+			<div class="info">
+				<p>22</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/23.jpg" alt="" />
+			<div class="info">
+				<p>23</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/24.jpg" alt="" />
+			<div class="info">
+				<p>24</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/25.jpg" alt="" />
+			<div class="info">
+				<p>25</p>
+			</div>
+		</a>
+	</li>
+ <li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/1.jpg" alt="" />
+			<div class="info">
+				<p>26</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/2.jpg" alt="" />
+			<div class="info">
+				<p>27</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/3.jpg" alt="" />
+			<div class="info">
+				<p>28</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/4.jpg" alt="" />
+			<div class="info">
+				<p>29</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/5.jpg" alt="" />
+			<div class="info">
+				<p>30</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/6.jpg" alt="" />
+			<div class="info">
+				<p>31</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/7.jpg" alt="" />
+			<div class="info">
+				<p>32</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/8.jpg" alt="" />
+			<div class="info">
+				<p>33</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/9.jpg" alt="" />
+			<div class="info">
+				<p>34</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/10.jpg" alt="" />
+			<div class="info">
+				<p>35</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/11.jpg" alt="" />
+			<div class="info">
+				<p>36</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/12.jpg" alt="" />
+			<div class="info">
+				<p>37</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/13.jpg" alt="" />
+			<div class="info">
+				<p>38</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/14.jpg" alt="" />
+			<div class="info">
+				<p>39</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/15.jpg" alt="" />
+			<div class="info">
+				<p>40</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/16.jpg" alt="" />
+			<div class="info">
+				<p>41</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/17.jpg" alt="" />
+			<div class="info">
+				<p>42</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/18.jpg" alt="" />
+			<div class="info">
+				<p>43</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/19.jpg" alt="" />
+			<div class="info">
+				<p>44</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/20.jpg" alt="" />
+			<div class="info">
+				<p>45</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/21.jpg" alt="" />
+			<div class="info">
+				<p>46</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/22.jpg" alt="" />
+			<div class="info">
+				<p>47</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/23.jpg" alt="" />
+			<div class="info">
+				<p>48</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/24.jpg" alt="" />
+			<div class="info">
+				<p>49</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="http://sc.chinaz.com">
+			<img src="images/25.jpg" alt="" />
+			<div class="info">
+				<p>50</p>
+			</div>
+		</a>
+	</li>
+</ul>
+<script src="js/jquery-latest.js"></script> 
+<script src="js/jquery.transit.min.js"></script> 
+<script>
+
+(function() {
+
+  $(function() {
+    var columns, current, easing, grid, hideItem, showItem, time,
+      _this = this;
+    grid = $(".grid");
+    current = {
+      index: -1,
+      column: 0,
+      line: 0
+    };
+    columns = 10;
+    easing = "cubic-bezier(0.165, 0.840, 0.440, 1.000)";
+    time = 400;
+    grid.on("mouseenter", "a", function(e) {
+      var column, el, image, index, info, item, line;
+      el = $(e.currentTarget);
+      info = el.find(".info");
+      image = el.find("img");
+      index = el.parent().index();
+      column = index % columns;
+      line = Math.floor(index / columns);
+      console.log(index, column, line);
+      item = {
+        el: el,
+        index: index,
+        column: column,
+        line: line,
+        info: info,
+        image: image
+      };
+      if (current.el && current.index === index) return;
+      if (line === current.line && column > current.column) {
+        showItem(item, "-100%", 0, "25%", 0);
+        hideItem(current, "100%", 0, "-25%", 0);
+      } else if (line === current.line && column < current.column) {
+        showItem(item, "100%", 0, "-25%", 0);
+        hideItem(current, "-100%", 0, "25%", 0);
+      } else if (line > current.line && column === current.column) {
+        showItem(item, 0, "-100%", 0, "25%");
+        hideItem(current, 0, "100%", 0, "-25%");
+      } else {
+        showItem(item, 0, "100%", 0, "-25%");
+        hideItem(current, 0, "-100%", 0, "25%");
+      }
+      return current = item;
+    });
+    showItem = function(item, infoX, infoY, imageX, imageY) {
+      item.info.stop().css({
+        x: infoX,
+        y: infoY,
+        display: "block"
+      }).transition({
+        x: 0,
+        y: 0,
+        duration: time,
+        easing: easing
+      });
+      return item.image.stop().transition({
+        x: imageX,
+        y: imageY,
+        opacity: .5,
+        duration: time,
+        easing: easing
+      });
+    };
+    return hideItem = function(item, infoX, infoY, imageX, imageY) {
+      if (!item.el) return;
+      item.info.stop().transition({
+        x: infoX,
+        y: infoY,
+        duration: time,
+        easing: easing
+      });
+      return item.image.stop().css({
+        x: imageX,
+        y: imageY,
+        opacity: .5
+      }).transition({
+        x: 0,
+        y: 0,
+        opacity: 1,
+        duration: time,
+        easing: easing
+      });
+    };
+  });
+
+}).call(this);
+  </script> 
+</body>
+</html>

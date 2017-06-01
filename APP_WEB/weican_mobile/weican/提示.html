@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微点餐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+<body style="background:#f3f3f3;">
+<div class="header"> 订单详情 <a class="logo2" href=""></a><img id="fenxiang_btn" src="../images/index/me_@2x.png" height="28" width="28" style="float:right; margin-right:5px;margin-top:10px"> </div>
+<div>
+  <ul class="info_list">
+    <li><a href="http://www.baidu.com"><div class="icon_01">我的订单</div><span></span></a></li>
+    <li><a href="#"><div class="icon_02">我的购物车</div><span></span></a></li>
+    <li><a href="#"><div class="icon_03">我的收藏</div><span></span></a></li>
+  </ul>
+</div>
+<div id="BgDiv"></div>
+<div style="margin:200px 60px;font-size:1.3em;text-align:center;line-height:30px;">订单已经生成，如果您已经登录，可以在 <a href="#" style="color:#313131;">用户中心</a> 查看  <a href="#" style="color:#313131;">订单详情</a>
+
+<input type="submit" value="跳转" style="width:150px;background:#f55754;color:#fff;height:40px;line-height:40px;font-size:1.2em;border-radius:5px;margin-top:30px;">
+</div>
+
+
+<script>
+$('#fenxiang_btn').click(function(){
+	$('.info_list').show();
+	$("#BgDiv").css({ display: "block", height: $(document).height() });
+	});
+$(document).click(function (e) {
+    var drag = $('#fenxiang_btn'),
+        dragel = $('#fenxiang_btn')[0],
+        target = e.target;
+    if (dragel !== target && !$.contains(dragel, target)) {
+    $('.info_list').hide();
+	$("#BgDiv").css({ display: "none"}); 
+    };
+});
+</script>
+
+</body>
+</html>

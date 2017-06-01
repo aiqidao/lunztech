@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微点餐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+<body style="background:#f3f3f3;">
+<div class="header"> 提交订单 <a class="logo2" href=""></a></div>
+<style>
+.icon_next{background:url(../images/cart/next_@2x.png) no-repeat 0 center;background-size:contain;float:right;width:28px;height:28px;margin-top:10px;}
+option{padding:5px 0;}
+
+</style>
+<ul class="menu_list">
+  <li><span>姓名：</span>
+    <input type="text" placeholder="请输入您的姓名" style="height:30px;">
+  </li>
+  <li><span>手机：</span>
+    <input type="text" placeholder="请输入您的手机号" style="height:30px;">
+  </li>
+  <li style="min-height:48px;" ><a href="#" style="color:#666">自提地址：
+    <span style="border:0px  buttonface; position:absolute; overflow:hidden"> 
+<select style=" margin:-2px -18px -2px -2px;border:0;border:none;outline:none;"> 
+<option>1111<option>11111111111111<option>111111111 
+</select></span>
+
+    </a></li>
+  <li><span>送货地址：</span>
+    <input type="text" placeholder="请输入详细地址" style="height:30px;">
+  </li>
+  <li><a href="#" style="color:#666">送货联系号码：0571-3746734<span class="icon_next"></span></a></li>
+</ul>
+<ul class="menu_list">
+  <li style="min-height:48px;"><span>自提时间：今日17:00-20:00,次日17:00-20:00送达</span></li>
+  <li><span>送餐备注：</span></li>
+  <li><span>地址：</span> <span >山东省青岛市李沧区九水东路58号</span></li>
+</ul>
+<ul class="menu_list">
+  <li class="peisong"><a style="color:#666"><span>
+    <input type="radio"  class="_shoucang" name="payment" id="payment" style="background:url(../images/index/quan_@2x.png) no-repeat 50% 50%; background-size:contain;width:12px;height:12px;" value="{$payment.pay_id}">
+    微信支付</span></a></li>
+  <li class="peisong"><a style="color:#666"><span>
+    <input type="radio"  class="_shoucang" name="payment" id="payment" style="background:url(../images/index/quan_@2x.png) no-repeat 50% 50%; background-size:contain;width:12px;height:12px;" value="{$payment.pay_id}" >
+    货到付款</span></a></li>
+</ul>
+<ul class="menu_list">
+  <li><span>五块肋骨+米饭 加白菜炖粉条 &times;1</span>
+    <div style="float:right;"> <span >￥45</span> </div>
+  </li>
+  <li><span>米饭 &times;1</span>
+    <div style="float:right;"> <span >￥2</span> </div>
+  </li>
+</ul>
+<ul class="menu_list">
+  <li class="_tijiao"><span>是否实现积分抵换</span>
+    <div style="float:right;"> <img src="../images/index/black.png" class="_tijiao_btn" width="28"> </div>
+  </li>
+  <li><span>该订单可获得</span><span style="color:#ed614a;font-size:1.2em;">30</span>积分</li>
+</ul>
+<div class="blank Mar_b_60"></div>
+<footer>
+  <div class="foot_buy" style="border-top: solid 1px #c8c8c8;">
+    <div class="my-cart"> <a href="goods_list.php" class="link ft15" style="color:#404040 !important;">总价：</a> <span id="cart_amount_desc" style="color:#f77970">￥89.00</span> </div>
+    <input type="image" src="../images/order/btn_ok.png" style="width:120px;float:right;outline:none;margin-right:15px;margin-top:10px;">
+    <div class="clear"></div>
+  </div>
+</footer>
+<script>
+	$(function(){
+		$('.peisong').find('._shoucang').eq(0).css('background','url(../images/index/dotRed_@2x.png) no-repeat 50% 50%');
+		$('.peisong').click(function(){
+
+			for(i=0;i<$('.peisong').size();i++){
+				$('.peisong').eq(i).find('._shoucang').css('background','url(../images/index/quan_@2x.png) no-repeat 50% 50%');		
+			}		
+			$(this).find('._shoucang').css('background','url(../images/index/dotRed_@2x.png) no-repeat 50% 50%');
+		})
+	})
+var bool = 0;
+ $('._tijiao').click(function(){
+	 if(bool ==0){
+		 $('._tijiao_btn').attr('src','../images/index/red.png');
+		 bool=1
+	 }else{
+		 $('._tijiao_btn').attr('src','../images/index/black.png');
+		 bool=0
+		 }
+	 })
+</script>
+</body>
+</html>

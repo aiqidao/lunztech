@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微点餐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+<body style="background:#f3f3f3;">
+<div class="header"> 有一家黄焖鸡 <a class="logo2" href=""></a></div>
+	<div href="#" class="add_add_manage_list" style="padding:0;">
+        <ul>
+        	<li id="state"><a href="#"  style="color:#ee5a58">订单状态</a></li><li id="detial"><a href="#" >订单详情</a></li>
+        </ul>
+    </div>
+    <div style="display:none;" id="_menu">
+<ul class="menu_list">
+	<li><span>菜单详情</span><div style="float:right;">共计： <span style="color:#ee5a58">￥45</span> </div></li>
+	<li><span>五块肋骨+米饭 加白菜炖粉条 &times;1</span><div style="float:right;"> <span >￥45</span> </div></li>
+	<li><span>米饭 &times;1</span><div style="float:right;"> <span >￥2</span> </div></li>
+</ul>
+
+<ul class="menu_list">
+	<li><span>配送信息</span></li>
+	<li><span>姓名：</span> <span >张楠</span></li>
+	<li><span>电话</span> <span >18709809809</span></li>
+    <li><span>地址：</span> <span >山东省青岛市李沧区九水东路58号</span></li>
+</ul>
+
+
+
+
+</div>
+</div>
+<div class="timeline-messages" style="margin-top:30px;margin-left:30px;">
+                                  <div style="margin-bottom:130px;">
+                                            <!-- Comment -->
+                                            <div class="msg-time-chat">
+                                                <div class="message-body msg-in">
+                                                    <span class="arrow"></span>
+                                                    <div class="text">
+                                                        <div class="first">
+                                                            <div class="order-success">订单提交成功 <time style="float:right;font-size:0.8em;margin-top:-10px;color:#b9b9b9">09:34</time></div>
+                                                            <p class="bg_popover">订单号：74834394</p>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /comment -->
+
+                                            <!-- Comment -->
+                                            <div class="msg-time-chat">
+                                                <div class="message-body msg-in">
+                                                    <span class="arrow"></span>
+                                                    <div class="text">
+                                                        <div class="first">
+                                                            <div class="order-success">订单提交成功 <time style="float:right;font-size:0.8em;margin-top:-10px;color:#b9b9b9">09:34</time></div>
+                                                            <p class="bg_popover">订单号：74834394</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="msg-time-chat">
+                                                <div class="message-body msg-in">
+                                                    <span class="arrow"></span>
+                                                    <div class="text">
+                                                        <div class="first">
+                                                            <div class="order-success">订单提交成功 <time style="float:right;font-size:0.8em;margin-top:-10px;color:#b9b9b9">09:34</time></div>
+                                                            <p class="bg_popover">订单号：74834394</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
+
+                                            <div class="msg-time-chat">
+                                                <div class="message-body msg-in">
+                                                    <span class="arrow"></span>
+                                                    <div class="text">
+                                                        <div class="first">
+                                                            <div class="order-success">订单提交成功 <time style="float:right;font-size:0.8em;margin-top:-10px;color:#b9b9b9">09:34</time></div>
+                                                            <p class="bg_popover">订单号：74834394</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                </div>            
+<div style="background:#e9e7e8;height:60px;position:fixed;bottom:0;width:100%;margin-left:-30px !important;text-align:center;">                                          
+<input type="button" class="btn_primary" value="取消订单" style="background:#f55754;width:180px;margin:0 auto;margin-top:8px;">
+</div>
+                                        </div>
+                                        
+                                        
+<script>
+ $(function(){
+	 $("#state").click(function(){
+		 $(".timeline-messages").show();
+		 $("#_menu").hide();
+		 $(this).children().css({"color":"#ee5a58"});
+		 $("#detial").children().css({"color":"#666"});
+		 })
+	 
+	 $("#detial").click(function(){
+		  $(".timeline-messages").hide();
+		 $("#_menu").show();
+		 $(this).children().css({"color":"#ee5a58"});
+		 $("#state").children().css({"color":"#666"});
+		 })
+	 
+	 })                                       
+                                        
+                                        
+ </script>
+</body>
+</html>

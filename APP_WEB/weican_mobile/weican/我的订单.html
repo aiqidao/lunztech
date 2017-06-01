@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微点餐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+<body style="background:#f3f3f3;">
+<div class="header"> 我的订单<a class="logo2" href="javascript:history(-1)"></a> <img id="fenxiang_btn" src="../images/index/me_@2x.png" height="28" width="28" style="float:right; margin-right:5px;margin-top:10px"> </div>
+<div>
+  <ul class="info_list">
+    <li><a href="http://www.baidu.com"><div class="icon_01">我的订单</div><span></span></a></li>
+    <li><a href="#"><div class="icon_02">我的购物车</div><span></span></a></li>
+    <li><a href="#"><div class="icon_03">我的收藏</div><span></span></a></li>
+  </ul>
+</div>
+
+<ul class="picbox">
+    	<li>
+        	<div class="pic"><img src="../images/cart/photo_@2x.png"></div>
+            <h2 style="font-size:1.3em;color:#000;">糖醋排骨 <span style="color:#ee5f5b;">￥68</span><div  style="float:right;margin-top:-8px;margin-right:5px;color:#666;font-size:0.8em;">2014-01-09</div></h2>
+            <p style="margin-top:5px;font-size:1.3em">1份<div style="float:right;margin-right:5px;font-size:1.2em;color:#ee5f5b">进行中</div></p>
+            
+        </li>
+    </ul>
+<ul class="picbox">
+    	<li>
+        	<div class="pic"><img src="../images/cart/photo_@2x.png"></div>
+            <h2  style="font-size:1.3em;color:#000;">溜肉段 <span style="color:#ee5f5b;">￥68</span><div  width="32" style="float:right;margin-top:-8px;margin-right:5px;color:#666;font-size:0.8em;">2014-01-09</div></h2>
+            <p style="margin-top:5px;font-size:1.3em">1份<div style="float:right;margin-right:5px;font-size:1.2em;color:#ee5f5b">进行中</div></p>
+            
+        </li>
+    </ul>
+<ul class="picbox">
+    	<li>
+        	<div class="pic"><img src="../images/cart/photo_@2x.png"></div>
+            <h2  style="font-size:1.3em;color:#000;">地三鲜 <span style="color:#ee5f5b;">￥68</span><div  width="32" style="float:right;margin-top:-8px;margin-right:5px;color:#666;font-size:0.8em;">2014-01-09</div></h2>
+            <p style="margin-top:5px;font-size:1.3em">1份<div style="float:right;margin-right:5px;font-size:1.2em;color:#ee5f5b">进行中</div></p>
+            
+        </li>
+</ul>
+
+
+
+
+<div id="BgDiv"></div>
+<script>
+$('#fenxiang_btn').click(function(){
+	$('.info_list').show();
+	$("#BgDiv").css({ display: "block", height: $(document).height() });
+	})
+$(document).click(function (e) {
+    var drag = $('#fenxiang_btn'),
+        dragel = $('#fenxiang_btn')[0],
+        target = e.target;
+    if (dragel !== target && !$.contains(dragel, target)) {
+    $('.info_list').hide();
+	$("#BgDiv").css({ display: "none"}); 
+    }
+});
+</script>
+
+</body>
+</html>

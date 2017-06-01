@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微点餐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+<div class="header"> 微点餐 <a class="logo2" href=""></a><span style="float:right;">排列<img id="fenxiang_btn" src="../images/order/down_@2x.png" height="28" width="28" style="float:right; margin-right:5px;margin-top:10px"></span> </div>
+<div>
+  <ul class="info_list_02">
+    <li><a href="http://www.baidu.com"><div class="icon_04">价格</div><span></span></a></li>
+    <li><a href="#"><div class="icon_05">人气</div><span></span></a></li>
+  </ul>
+</div>
+<style>
+.probox a{color:#FFF;}
+.pro_title{widht:98%;margin-left:3px;}
+h2{margin:5px;}
+</style>
+<ul class="index_list">
+  <li>
+  <h2>鱼类</h2>
+    <div class="probox" style="position:relative;float:left;"> 
+    <a >
+    <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(1);" title="减少数量" class="add" id="reduce1" style="display:none;">
+      <img  src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number1" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(1)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+      </a> </div>
+    <div class="probox" style="position:relative;float:left;"> 
+    <a >
+    <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(2);" title="减少数量" class="add" id="reduce2" style="display:none;">
+      <img id="reduce2" src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number2" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(2)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+      </a> </div>
+    <div class="probox" style="position:relative;float:left;"> 
+   <a >
+   <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(3);" title="减少数量" class="add" id="reduce3" style="display:none;">
+      <img id="reduce3" src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number3" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(3)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+      </a> </div>
+    <div class="probox" style="position:relative;float:left;"> 
+    <a >
+    <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(4);" title="减少数量" class="add" id="reduce4" style="display:none;">
+      <img id="reduce4" src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number4" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(4)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+    </a> </div> 
+
+
+ </li>
+  <div class="clear"></div>
+</ul>
+
+<ul class="index_list">
+  <li>
+ <h2>贝类</h2>
+    <div class="probox" style="position:relative;float:left;"> 
+    <a >
+    <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(5);" title="减少数量" class="add" id="reduce5" style="display:none;">
+      <img id="reduce5" src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number5" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(5)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+      </a> </div>
+    <div class="probox" style="position:relative;float:left;"> 
+    <a >
+    <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(6);" title="减少数量" class="add" id="reduce6" style="display:none;">
+      <img id="reduce6" src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number6" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(6)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+      </a> </div>
+    <div class="probox" style="position:relative;float:left;"> 
+    <a >
+    <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(7);" title="减少数量" class="add" id="reduce7" style="display:none;">
+      <img id="reduce7" src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number7" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(7)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+      </a> </div>
+    <div class="probox" style="position:relative;float:left;"> 
+    <a >
+    <div style="position:absolute;left:5px;bottom:40px;font-size:14px;">剩余<span style="color:#F00;">10</span>份</div>
+      <div class="pro_pic bor"> <img src="../images/cart/photo_@2x.png" width="100%" /></div>
+      <div class="pro_title" style="float:left;">酱爆鱿鱼<span>￥32.50</span>
+      <a href="javascript:;" onclick="red_num(8);" title="减少数量" class="add" id="reduce8" style="display:none;">
+      <img id="reduce8" src="../images/cart/reduce_@2x.png" width="28" style="position:absolute;bottom:50px;right:2px;"></a>
+	  <input type="text" id="goods_number8" name="number" size="1" style="position:absolute;bottom:15px;right:10px;background:none;color:#F00;">
+	  <a href="javascript:;" onclick="add_num(8)" title="增加数量">
+      <img src="../images/cart/add_@2x.png" width="28" style="position:absolute;bottom:10px;right:3px;"></a>    
+      </div>
+      </a> </div> 
+</li>
+  <div class="clear"></div>
+</ul>
+<div class="blank Mar_b_60"></div>
+<div id="BgDiv"></div>
+<footer>
+  <div class="foot2">
+	<div class="cart_list"><a href="#">
+                <i class="fa"><img src="../images/order/shop_@2x.png" width="48"></i>
+                <span class="badge bg-important">4</span>
+                
+            </a>
+     <span style="font-size:1.4em;color:#fff;position:absolute;left:80px;top:12px;">总计共：￥1234</span>
+         <input type="image" src="../images/order/OK_@2x.png" style="width:100px;float:right;margin-top:5px;margin-right:6px;">    
+            </div>
+ 
+    <div class="clear"></div>
+  </div>
+</footer>
+<style>
+h2{font-weight:normal}
+.foot2 {
+height: 45px;
+margin-top: 10px;
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color: #45444a;
+padding: 5px 0 15px 0;
+}
+.cart_list{height:48px;line-height:48px;}
+.fa{margin-left:15px;}
+.fa img{margin-top:10px;}
+.badge.bg-warning {
+background: #FCB322;
+}
+
+.badge {
+display: inline-block;
+min-width: 10px;
+padding: 3px 7px;
+font-size: 12px;
+font-weight: 700;
+color: #fff;
+line-height: 1;
+vertical-align: baseline;
+white-space: nowrap;
+text-align: center;
+background-color: #999;
+border-radius: 10px;
+}
+.bg-important {
+    background: none repeat scroll 0% 0% #FF6C60;
+}
+.cart_list .badge {
+position: absolute;
+left: 48px;
+top: 10px;
+z-index: 100;
+}
+</style>
+<script>
+$('#fenxiang_btn').click(function(){
+	$('.info_list_02').show();
+	$("#BgDiv").css({ display: "block", height: $(document).height() });
+	})
+$(document).click(function (e) {
+    var drag = $('#fenxiang_btn'),
+        dragel = $('#fenxiang_btn')[0],
+        target = e.target;
+    if (dragel !== target && !$.contains(dragel, target)) {
+    $('.info_list_02').hide();
+	$("#BgDiv").css({ display: "none"}); 
+    }
+});
+</script>
+<script type="text/javascript">
+function add_num(m){
+	document.getElementById("goods_number"+m).value++;
+	var number = document.getElementById("goods_number"+m).value;
+	if(document.getElementById("goods_number"+m).value>0){
+		document.getElementById("reduce"+m).style.display="block";
+		document.getElementById("goods_number"+m).style.display="block";
+		}
+}
+function red_num(n){
+	if (document.getElementById("goods_number"+n).value>0){
+		document.getElementById("goods_number"+n).value--;
+	}
+	var number = document.getElementById("goods_number"+n).value;
+
+	if(document.getElementById("goods_number"+n).value<1){
+	
+		document.getElementById("reduce"+n).style.display="none";
+		document.getElementById("goods_number"+n).style.display="none"
+		}
+}
+</script>
+
+</body>
+</html>

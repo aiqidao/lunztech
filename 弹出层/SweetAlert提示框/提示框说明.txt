@@ -1,0 +1,64 @@
+SweetAlert可以替代Javascript原生的alert和confirm等函数呈现的弹出提示框，它将提示框进行了美化，并且允许自定义，支持设置提示框标题、提示类型、内容展示图片、确认取消按钮文本、点击后回调函数等。
+
+选项设置
+SweetAlert插件提供了很多选项设置，可以通过自定义很多属性参数等信息来满足项目开发需求。
+
+title：提示框标题。
+
+text：提示内容。
+
+type：提示类型，有：success（成功），error（错误），warning（警告），input（输入）。
+
+showCancelButton：是否显示“取消”按钮。
+
+animation：提示框弹出时的动画效果，如slide-from-top（从顶部滑下）等。
+
+html：是否支持html内容。
+
+timer：设置自动关闭提示框时间（毫秒）。
+
+showConfirmButton：是否显示确定按钮。
+
+confirmButtonText：定义确定按钮文本内容。
+
+imageUrl：定义弹出框中的图片地址。
+
+更多有关SweetAlert插件的信息可以访问项目网址：https://github.com/t4t5/sweetalert。
+
+
+准备工作
+首先我们必须将SweetAlert插件的js文件和css文件引入到页面中。
+ 
+<script src="sweetalert.min.js"></script> 
+<link rel="stylesheet" href="sweetalert.css"> 
+本文结合的实例中使用了jQuery库，所以jQuery库文件也要引入。
+基本使用
+在页面中需要调用弹出提示框的的元素上绑定一句话，如点击一个按钮弹出：
+ 
+$("button").click(function(){ 
+    swal("这是一个信息提示框!"); 
+}); 
+确认提示
+我们在操作删除等危险操作时，一般在删除之前会弹出一个确认提示框，如同javascript的confirm()函数，当点击确认按钮后，再进行下一步真正的删除操作。
+ 
+$("button").click(function(){ 
+    swal({ 
+        title: "您确定要删除吗？",  
+        text: "您确定要删除这条数据？",  
+        type: "warning", 
+        showCancelButton: true, 
+        closeOnConfirm: false, 
+        confirmButtonText: "是的，我要删除", 
+        confirmButtonColor: "#ec6c62" 
+    }, function() { 
+        $.ajax({ 
+            url: "do.php", 
+            type: "DELETE" 
+        }).done(function(data) { 
+            swal("操作成功!", "已成功删除数据！", "success"); 
+        }).error(function(data) { 
+            swal("OMG", "删除操作失败了!", "error"); 
+        }); 
+    }); 
+}); 
+上面的实例代码实现了一个确认删除数据的过程。点击按钮后，弹出提示框，要求用户确认，如果点了确认，则会向后台do.php发送ajax请求，那么do.php就进行对应的数据删除操作，删除后会返回data给前端页面，js根据返回的数据来提示用户操作结果信息。点击这里看演示。

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		    ul{position: ;}
+			li{text-decoration: none;font-size: 20px;color: #333;float: left;list-style-type: none;padding: 10px;}
+	        li a{text-decoration: none;width: 80px;}
+			li > a.active:before {transform: scale(1);}
+			li > a:before {content: "";position: absolute;left: 5px;bottom: -6px;height: 2px;width: 80%;background: #E3BA6F;transform: scale(0);transition: all 0.3s;}
+			li > a:hover:before {transform: scale(1);}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a class="active" href="">首页</a></li>
+			<li><a href="">关于</a></li>
+			<li><a href="">新闻</a></li>
+			<li><a href="">产品</a></li>
+			<li><a href="">招聘</a></li>
+			<li><a href="">联系</a></li>
+		</ul>
+	</body>
+</html>
