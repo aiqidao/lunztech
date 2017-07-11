@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!--[if lt IE 9]>
 		<script type="text/javascript" src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-		<![endif]-->
-		<meta charset="utf-8">
+		<![endif]-->		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title></title>		
 	    <meta name="description" content="">
 	    <meta name="author" content="">
-	    <style>	    
+	    <style>
+	    	/*垂直居中*/
+	    	.parent{background-color: deepskyblue;display: table-cell;vertical-align: middle;text-align: center;}.child{background-color: coral;}
+		/*多行垂直居中*/
 	    .middle-box{height:100px; border: 1px solid #f00; width: 400px; margin: 0 auto; text-align: center; }
 		.middle-box p{vertical-align: middle; display: inline-block; *display: inline; *zoom: 1;}
 		.visible{height: 100%; vertical-align: middle; width: 0; display: inline-block;}
@@ -20,10 +23,12 @@
 		.cont_1{width:500px;padding:10px;margin:0px auto;background: #ddd;}
 		.cont_1 p {display: inline-block;text-align: center;padding: 0;margin: 0;}
 		/*两列，右侧自适应布局*/
-		.g-bd1{margin:10px auto;width: 300px;display: inline-block;}
+		.g-bd1{margin:10px auto;display: inline-block;}
 		.g-sd1{position:relative;float:left;width:90px;margin-right:-90px;background-color: red;}
 		.g-mn1{float:right;width:100%;background-color:cyan;}
 		.g-mn1c{margin-left:100px;}
+		/*一列固定，一列自适应*/
+		.left_1 {float: left;width: 100px;} .right_1 {overflow: hidden;}
 	    </style>
 	</head>
 	<body>
@@ -31,8 +36,13 @@
 		<div style="position: relative;height: 60px;background-color: red;text-align: center;">
 			<div style="position: absolute;top: 50%;left: 50%;transform: translate(-50% , -50%);">垂直居中！</div>
 		</div>
+		<!--垂直居中-->
+		<div class="parent" style="width: 100px; height: 100px;">
+		  <div class="child">垂直居中</div>
+		</div>
+		<!--多行垂直居中-->
 		<div class="middle-box">
-			<p><span class="suc-tip">多行垂直居中！</span><br/><span class="suc-link">多行垂直居中！<a href="http://aiqidao.com">http://aiqidao.com</a></span></p>
+			<p><span class="suc-tip">多行垂直居中！</span><br><span class="suc-link">多行垂直居中！<a href="http://aiqidao.com/">http://aiqidao.com</a></span></p>
 			<i class="visible"></i>
 			<p style="display:none;"><span class="suc-tip">博客</span></p>
 		</div>
@@ -54,6 +64,15 @@
 		        </div>
 		    </div>
 		</div>
-		
+		<br><br>		
+		<!--一列固定，一列自适应-->
+		<div class="part">
+			<div class="left_1" style="background-color: red;">
+				<p>left</p><p>固定</p>
+			</div>
+			<div class="right_1" style="background-color:blue;">
+				<p>right</p><p>自适应</p>
+			</div>
+		</div>
 	</body>
 </html>
